@@ -1,0 +1,37 @@
+[
+  {
+    "Warehouse": "Somerton",
+    "Total capacity": "7,303",
+    "Occupied": 6600,
+    "Occupied %": "90.37%",
+    "Capacity %": "100%"
+  },
+  {
+    "Warehouse": "Truganina",
+    "Total capacity": 684,
+    "Occupied": 454,
+    "Occupied %": "66.37%",
+    "Capacity %": "100%"
+  },
+  {
+    "Warehouse": "Campbelfield",
+    "Total capacity": 973,
+    "Occupied": 954,
+    "Occupied %": "98.05%",
+    "Capacity %": "100%"
+  },
+  {
+    "Warehouse": "Clayton",
+    "Total capacity": "8,500",
+    "Occupied": 10863,
+    "Occupied %": "127.80%",
+    "Capacity %": "100%"
+  },
+  {
+    "Warehouse": "Altona",
+    "Total capacity": "2,000",
+    "Occupied": 1602,
+    "Occupied %": "80.10%",
+    "Capacity %": "100%"
+  }
+]

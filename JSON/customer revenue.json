@@ -1,0 +1,1619 @@
+[
+  {
+    "Month": "Aug-25",
+    "customer": "RIVIANA FOODS - KJ & CO",
+    "Market/Industry": "Cakes and Pastry",
+    "Revenue type": "Transport",
+    "REVENUE": 898.85
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "RIVIANA FOODS - KJ & CO",
+    "Market/Industry": "Cakes and Pastry",
+    "Revenue type": "Warehouse",
+    "REVENUE": 552893.77
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "GRAINCORP FOODS AUSTRALIA PTY LIMITED - TRANSPORT",
+    "Market/Industry": "Food Oils",
+    "Revenue type": "Transport",
+    "REVENUE": 353424.49
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "KYVALLEY - TROLLEYS",
+    "Market/Industry": "Dairy",
+    "Revenue type": "Transport",
+    "REVENUE": 176979.53
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "KYVALLEY - TROLLEYS",
+    "Market/Industry": "Dairy",
+    "Revenue type": "Warehouse",
+    "REVENUE": 129634.78
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "FARM FRITES",
+    "Market/Industry": "Produce",
+    "Revenue type": "Transport",
+    "REVENUE": 59359.72
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "FARM FRITES",
+    "Market/Industry": "Produce",
+    "Revenue type": "Warehouse",
+    "REVENUE": 193890.62
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "GRAINCORP FOODS AUSTRALIA PTY LIMITED",
+    "Market/Industry": "Food Oils",
+    "Revenue type": "Transport",
+    "REVENUE": 220.18
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "GRAINCORP FOODS AUSTRALIA PTY LIMITED",
+    "Market/Industry": "Food Oils",
+    "Revenue type": "Warehouse",
+    "REVENUE": 243366.46
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "FOODFX",
+    "Market/Industry": "Dairy",
+    "Revenue type": "Transport",
+    "REVENUE": 53010.36
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "FOODFX",
+    "Market/Industry": "Dairy",
+    "Revenue type": "Warehouse",
+    "REVENUE": 65279.23
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "COLES",
+    "Market/Industry": "FMCG",
+    "Revenue type": "Transport",
+    "REVENUE": 97388.88
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "NESTLE AUSTRALIA",
+    "Market/Industry": "Confectionary",
+    "Revenue type": "Transport",
+    "REVENUE": 18101.65
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "NESTLE AUSTRALIA",
+    "Market/Industry": "Confectionary",
+    "Revenue type": "Warehouse",
+    "REVENUE": 74367.24
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "BARRY CALLEBAUT AUSTRALIA PTY LTD",
+    "Market/Industry": "Confectionary",
+    "Revenue type": "Transport",
+    "REVENUE": 18516.54
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "BARRY CALLEBAUT AUSTRALIA PTY LTD",
+    "Market/Industry": "Confectionary",
+    "Revenue type": "Warehouse",
+    "REVENUE": 73685.14
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "MADE AUSTRALIA",
+    "Market/Industry": "Beverage",
+    "Revenue type": "Transport",
+    "REVENUE": 32249.84
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "MADE AUSTRALIA",
+    "Market/Industry": "Beverage",
+    "Revenue type": "Warehouse",
+    "REVENUE": 49660.87
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "JURGENS",
+    "Market/Industry": "Produce",
+    "Revenue type": "Transport",
+    "REVENUE": 53974.57
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "JURGENS",
+    "Market/Industry": "Produce",
+    "Revenue type": "Warehouse",
+    "REVENUE": 9834.66
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "FMAYER",
+    "Market/Industry": "Confectionary",
+    "Revenue type": "Transport",
+    "REVENUE": 61534.88
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "SHOOBRIDGE TRANSPORT",
+    "Market/Industry": "Food Service",
+    "Revenue type": "Transport",
+    "REVENUE": 55714.04
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "RIVIANA FOODS - KJ & CO - TRANSPORT",
+    "Market/Industry": "Cakes and Pastry",
+    "Revenue type": "Transport",
+    "REVENUE": 47360.4
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "RIVIANA FOODS - KJ & CO - TRANSPORT",
+    "Market/Industry": "Cakes and Pastry",
+    "Revenue type": "Warehouse",
+    "REVENUE": 856.25
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "MONDELEZ - TRUGANINA",
+    "Market/Industry": "Confectionary",
+    "Revenue type": "Transport",
+    "REVENUE": 40914.65
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "KINROSS - SOMERTON",
+    "Market/Industry": "Dairy",
+    "Revenue type": "Warehouse",
+    "REVENUE": 39117.57
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "MONDELEZ - LAVERTON",
+    "Market/Industry": "Confectionary",
+    "Revenue type": "Transport",
+    "REVENUE": 35048.49
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "LANTMANNEN",
+    "Market/Industry": "Cakes and Pastry",
+    "Revenue type": "Transport",
+    "REVENUE": 34316.16
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "GLUTEN FREE BAKEHOUSE",
+    "Market/Industry": "Cakes and Pastry",
+    "Revenue type": "Transport",
+    "REVENUE": 24059.54
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "GLUTEN FREE BAKEHOUSE",
+    "Market/Industry": "Cakes and Pastry",
+    "Revenue type": "Warehouse",
+    "REVENUE": 10165.92
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "GOLDEN FRIES",
+    "Market/Industry": "Food Service",
+    "Revenue type": "Transport",
+    "REVENUE": 1143.31
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "GOLDEN FRIES",
+    "Market/Industry": "Food Service",
+    "Revenue type": "Warehouse",
+    "REVENUE": 25603.9
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "FIRST PRESS MERCHANTS PTY LTD",
+    "Market/Industry": "Nuts/Grains/Fruits",
+    "Revenue type": "Transport",
+    "REVENUE": 24657.24
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "KYVALLEY - FOOD PLASTICS",
+    "Market/Industry": "Dairy",
+    "Revenue type": "Transport",
+    "REVENUE": 24097.56
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "TEMPTATION BAKERIES",
+    "Market/Industry": "Cakes and Pastry",
+    "Revenue type": "Transport",
+    "REVENUE": 11928.78
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "TEMPTATION BAKERIES",
+    "Market/Industry": "Cakes and Pastry",
+    "Revenue type": "Warehouse",
+    "REVENUE": 10275.87
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "KYVALLEY - CARTON MILK",
+    "Market/Industry": "Dairy",
+    "Revenue type": "Transport",
+    "REVENUE": 10152.41
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "KYVALLEY - CARTON MILK",
+    "Market/Industry": "Dairy",
+    "Revenue type": "Warehouse",
+    "REVENUE": 11224.1
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "SCALZO",
+    "Market/Industry": "Nuts/Grains/Fruits",
+    "Revenue type": "Transport",
+    "REVENUE": 11686.88
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "SCALZO",
+    "Market/Industry": "Nuts/Grains/Fruits",
+    "Revenue type": "Warehouse",
+    "REVENUE": 9627.32
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "GOODMAN FIELDER",
+    "Market/Industry": "Food Service",
+    "Revenue type": "Transport",
+    "REVENUE": 21311.93
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "PARKLAND LOGISTICS PTY LTD",
+    "Market/Industry": "Food Service",
+    "Revenue type": "Transport",
+    "REVENUE": 20494.21
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "NESTLE BROADFORD",
+    "Market/Industry": "Confectionary",
+    "Revenue type": "Warehouse",
+    "REVENUE": 20399.58
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "MINUS1",
+    "Market/Industry": "Food Service",
+    "Revenue type": "Transport",
+    "REVENUE": 19151.23
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "SPECIALISED CHICKEN",
+    "Market/Industry": "Meats/Poultry",
+    "Revenue type": "Transport",
+    "REVENUE": 8321.67
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "SPECIALISED CHICKEN",
+    "Market/Industry": "Meats/Poultry",
+    "Revenue type": "Warehouse",
+    "REVENUE": 9133.23
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "THE CAROB KITCHEN",
+    "Market/Industry": "Food Service",
+    "Revenue type": "Transport",
+    "REVENUE": 9387.7
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "THE CAROB KITCHEN",
+    "Market/Industry": "Food Service",
+    "Revenue type": "Warehouse",
+    "REVENUE": 7970.52
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "BAKERY REPUBLIC",
+    "Market/Industry": "Cakes and Pastry",
+    "Revenue type": "Transport",
+    "REVENUE": 7301.64
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "BAKERY REPUBLIC",
+    "Market/Industry": "Cakes and Pastry",
+    "Revenue type": "Warehouse",
+    "REVENUE": 9935.47
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "MAEIL AUSTRALIA PTY LTD",
+    "Market/Industry": "Dairy",
+    "Revenue type": "Warehouse",
+    "REVENUE": 17080.02
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "AUSTRALIAN MEAT GROUP",
+    "Market/Industry": "Meats/Poultry",
+    "Revenue type": "Warehouse",
+    "REVENUE": 15196.9
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "CAMERON - GRAINCORP",
+    "Market/Industry": "Food Oils",
+    "Revenue type": "Transport",
+    "REVENUE": 15015.29
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "ENK GROUP",
+    "Market/Industry": "Cakes and Pastry",
+    "Revenue type": "Transport",
+    "REVENUE": 13261.11
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "BREEZE LOGISTICS",
+    "Market/Industry": "Food Service",
+    "Revenue type": "Transport",
+    "REVENUE": 13119.75
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "BURRA FOODS - H & H OFFLINE",
+    "Market/Industry": "Dairy",
+    "Revenue type": "Warehouse",
+    "REVENUE": 13107.93
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "KOOKA BROTHAS",
+    "Market/Industry": "Cakes and Pastry",
+    "Revenue type": "Transport",
+    "REVENUE": 12134.98
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "TEK FOODS",
+    "Market/Industry": "Meats/Poultry",
+    "Revenue type": "Transport",
+    "REVENUE": 8871.47
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "TEK FOODS",
+    "Market/Industry": "Meats/Poultry",
+    "Revenue type": "Warehouse",
+    "REVENUE": 2907.72
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "KYVALLEY - GEELONG DAIRY MILK",
+    "Market/Industry": "Dairy",
+    "Revenue type": "Transport",
+    "REVENUE": 8246.85
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "KYVALLEY - GEELONG DAIRY MILK",
+    "Market/Industry": "Dairy",
+    "Revenue type": "Warehouse",
+    "REVENUE": 2083.26
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "HUDSON PACIFIC",
+    "Market/Industry": "Food Service",
+    "Revenue type": "Transport",
+    "REVENUE": 9691.58
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "KYVALLEY - KYABRAM DAIRY GROUP",
+    "Market/Industry": "Dairy",
+    "Revenue type": "Transport",
+    "REVENUE": 9169.95
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "SUNRISE EGGS - FROZEN",
+    "Market/Industry": "Dairy",
+    "Revenue type": "Transport",
+    "REVENUE": 4311.85
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "SUNRISE EGGS - FROZEN",
+    "Market/Industry": "Dairy",
+    "Revenue type": "Warehouse",
+    "REVENUE": 4789.08
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "PURE DAIRY",
+    "Market/Industry": "Dairy",
+    "Revenue type": "Transport",
+    "REVENUE": 6225.18
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "PURE DAIRY",
+    "Market/Industry": "Dairy",
+    "Revenue type": "Warehouse",
+    "REVENUE": 2558.64
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "MONDELEZ - RAW MATERIALS",
+    "Market/Industry": "Confectionary",
+    "Revenue type": "Transport",
+    "REVENUE": 8455.6
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "BURRA FOODS",
+    "Market/Industry": "Dairy",
+    "Revenue type": "Transport",
+    "REVENUE": 2354.15
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "BURRA FOODS",
+    "Market/Industry": "Dairy",
+    "Revenue type": "Warehouse",
+    "REVENUE": 5753.16
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "UNITED NETWORK SUPPLIERS",
+    "Market/Industry": "Cakes and Pastry",
+    "Revenue type": "Transport",
+    "REVENUE": 7978.18
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "KYVALLEY - GEELONG PALLECONS",
+    "Market/Industry": "Dairy",
+    "Revenue type": "Transport",
+    "REVENUE": 4985.17
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "KYVALLEY - GEELONG PALLECONS",
+    "Market/Industry": "Dairy",
+    "Revenue type": "Warehouse",
+    "REVENUE": 2440.36
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "MONDELEZ - SCORESBY",
+    "Market/Industry": "Confectionary",
+    "Revenue type": "Transport",
+    "REVENUE": 7206.75
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "TENDER CHOICE",
+    "Market/Industry": "Food Service",
+    "Revenue type": "Transport",
+    "REVENUE": 7099.81
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "HEATHER BRAE SHORTBREAD",
+    "Market/Industry": "Cakes and Pastry",
+    "Revenue type": "Transport",
+    "REVENUE": 7048.94
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "MARATHON FOODS",
+    "Market/Industry": "Cakes and Pastry",
+    "Revenue type": "Transport",
+    "REVENUE": 6947.7
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "MALLEE FOODS",
+    "Market/Industry": "Food Service",
+    "Revenue type": "Transport",
+    "REVENUE": 6196.26
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "ORIENTAL MERCHANT",
+    "Market/Industry": "Food Service",
+    "Revenue type": "Transport",
+    "REVENUE": 6022.2
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "KA FOODS FINLEY",
+    "Market/Industry": "Food Service",
+    "Revenue type": "Transport",
+    "REVENUE": 5657.93
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "ANADOLU SMALL GOODS",
+    "Market/Industry": "Confectionary",
+    "Revenue type": "Transport",
+    "REVENUE": 5555.76
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "GC BRANDS",
+    "Market/Industry": "Confectionary",
+    "Revenue type": "Transport",
+    "REVENUE": 411.29
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "GC BRANDS",
+    "Market/Industry": "Confectionary",
+    "Revenue type": "Warehouse",
+    "REVENUE": 4647.22
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "CADELL FOODSERVICE",
+    "Market/Industry": "Food Service",
+    "Revenue type": "Transport",
+    "REVENUE": 5016.05
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "SWAN HILL WHOLESALERS",
+    "Market/Industry": "Food Service",
+    "Revenue type": "Transport",
+    "REVENUE": 4911.38
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "PK LOGISTICS",
+    "Market/Industry": "Food Service",
+    "Revenue type": "Transport",
+    "REVENUE": 4891.43
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "NEW TECH LOGISTICS",
+    "Market/Industry": "Food Service",
+    "Revenue type": "Transport",
+    "REVENUE": 4800.73
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "KINROSS FARMS - FROZEN",
+    "Market/Industry": "Food Service",
+    "Revenue type": "Warehouse",
+    "REVENUE": 4508.43
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "ONE STOP WHOLESALERS",
+    "Market/Industry": "Food Service",
+    "Revenue type": "Transport",
+    "REVENUE": 3586.27
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "JAWS TRANSPORT",
+    "Market/Industry": "Food Service",
+    "Revenue type": "Transport",
+    "REVENUE": 3465.24
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "KYVALLEY - BUTTER",
+    "Market/Industry": "Dairy",
+    "Revenue type": "Transport",
+    "REVENUE": 1688.67
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "KYVALLEY - BUTTER",
+    "Market/Industry": "Dairy",
+    "Revenue type": "Warehouse",
+    "REVENUE": 1433.6
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "RIVIANA - ROZA'S GOURMET",
+    "Market/Industry": "Food Service",
+    "Revenue type": "Transport",
+    "REVENUE": 2517.55
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "RIVIANA - ROZA'S GOURMET",
+    "Market/Industry": "Food Service",
+    "Revenue type": "Warehouse",
+    "REVENUE": 575.92
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "OROSO POULTRY",
+    "Market/Industry": "Meats/Poultry",
+    "Revenue type": "Transport",
+    "REVENUE": 2948.58
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "NICE INDIAN STORE",
+    "Market/Industry": "Food Service",
+    "Revenue type": "Transport",
+    "REVENUE": 2920.92
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "CHILL VIC",
+    "Market/Industry": "Food Service",
+    "Revenue type": "Transport",
+    "REVENUE": 2669.06
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "AUSSIE PLANT BASED",
+    "Market/Industry": "Food Service",
+    "Revenue type": "Transport",
+    "REVENUE": 2068.76
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "RIVIANA - ROZA'S GOURMET - TRANSPORT",
+    "Market/Industry": "Food Service",
+    "Revenue type": "Transport",
+    "REVENUE": 1536.97
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "RIVIANA - ROZA'S GOURMET - TRANSPORT",
+    "Market/Industry": "Food Service",
+    "Revenue type": "Warehouse",
+    "REVENUE": 406.25
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "ROADMASTER",
+    "Market/Industry": "Food Service",
+    "Revenue type": "Transport",
+    "REVENUE": 1892.9
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "CV GARLIC",
+    "Market/Industry": "Produce",
+    "Revenue type": "Transport",
+    "REVENUE": 1212.1
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "ACIT",
+    "Market/Industry": "Food Service",
+    "Revenue type": "Transport",
+    "REVENUE": 1153.7
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "SULTAN FOODS AUSTRALIA",
+    "Market/Industry": "Meats/Poultry",
+    "Revenue type": "Transport",
+    "REVENUE": 1066.46
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "JAD FOODS",
+    "Market/Industry": "Food Service",
+    "Revenue type": "Transport",
+    "REVENUE": 1063.49
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "QUALITY CENTRE FOOD SERVICES",
+    "Market/Industry": "Food Service",
+    "Revenue type": "Transport",
+    "REVENUE": 997.78
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "ACM",
+    "Market/Industry": "Food Service",
+    "Revenue type": "Transport",
+    "REVENUE": 762.07
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "LARD ASS BUTTER",
+    "Market/Industry": "Dairy",
+    "Revenue type": "Transport",
+    "REVENUE": 761.79
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "EMU FARM",
+    "Market/Industry": "Pet Food",
+    "Revenue type": "Transport",
+    "REVENUE": 746.88
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "LINDSAY TRANSPORT",
+    "Market/Industry": "Food Service",
+    "Revenue type": "Transport",
+    "REVENUE": 382.61
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "GLOBAL MEAT EXPORTS T/A  (CEDAR MEATS)",
+    "Market/Industry": "Meats/Poultry",
+    "Revenue type": "Transport",
+    "REVENUE": 371.73
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "AUSSIE CHIPS",
+    "Market/Industry": "Produce",
+    "Revenue type": "Transport",
+    "REVENUE": 230.02
+  },
+  {
+    "Month": "Aug-25",
+    "customer": "WHITE STRIPE FOODS PTY LTD",
+    "Market/Industry": "Cakes and Pastry",
+    "Revenue type": "Transport",
+    "REVENUE": 206.54
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  },
+  {
+    "Month": "",
+    "customer": "",
+    "Market/Industry": "",
+    "Revenue type": "",
+    "REVENUE": ""
+  }
+]

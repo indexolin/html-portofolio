@@ -1,0 +1,50 @@
+[
+  {
+    "Business Performance": "Actuals",
+    "Month": "Jul-25",
+    "Revenue Budget": "$2,815,691.18",
+    "Actual Budget": "$2,973,024.46",
+    "EBITDA FCST": "9.00%",
+    "EBITDA ACTUAL": "11.04%"
+  },
+  {
+    "Business Performance": "Actuals",
+    "Month": "Aug-25",
+    "Revenue Budget": "$2,706,339.26",
+    "Actual Budget": "$2,727,526.25",
+    "EBITDA FCST": "6.00%",
+    "EBITDA ACTUAL": "8.20%"
+  },
+  {
+    "Business Performance": "Forecast",
+    "Month": "Sep-25",
+    "Revenue Budget": "$2,588,413.63",
+    "Actual Budget": "",
+    "EBITDA FCST": "7.03%",
+    "EBITDA ACTUAL": ""
+  },
+  {
+    "Business Performance": "Forecast",
+    "Month": "Oct-25",
+    "Revenue Budget": "$2,978,273.53",
+    "Actual Budget": "",
+    "EBITDA FCST": "14.77%",
+    "EBITDA ACTUAL": ""
+  },
+  {
+    "Business Performance": "Forecast",
+    "Month": "Nov-25",
+    "Revenue Budget": "$2,693,627.80",
+    "Actual Budget": "",
+    "EBITDA FCST": "7.12%",
+    "EBITDA ACTUAL": ""
+  },
+  {
+    "Business Performance": "Forecast",
+    "Month": "Dec-25",
+    "Revenue Budget": "$2,762,448.95",
+    "Actual Budget": "",
+    "EBITDA FCST": "13.39%",
+    "EBITDA ACTUAL": ""
+  }
+]

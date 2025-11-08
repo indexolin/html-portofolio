@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logistics Dashboard</title>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #F2F2F2; color: #333; overflow-x: hidden; }
+        .container { display: flex; height: 100vh; }
+        .sidebar { width: 220px; background-color: #202125; color: white; padding: 20px; overflow-y: auto; flex-shrink: 0; }
+        .sidebar h2 { font-size: 16px; margin-bottom: 20px; font-weight: 600; }
+        .upload-section { margin-bottom: 25px; }
+        .upload-section label { display: block; font-size: 12px; margin-bottom: 6px; color: #ddd; }
+        .upload-section input[type="file"] { width: 100%; padding: 6px; font-size: 11px; background-color: #2c2d31; color: white; border: 1px solid #3a3b40; border-radius: 4px; cursor: pointer; }
+        .filter-section { margin-top: 30px; }
+        .filter-section h3 { font-size: 14px; margin-bottom: 15px; font-weight: 600; }
+        .filter-section select { width: 100%; padding: 8px; font-size: 12px; margin-bottom: 12px; background-color: #2c2d31; color: white; border: 1px solid #3a3b40; border-radius: 4px; }
+        .clear-btn { width: 100%; padding: 8px; background-color: #4a9eff; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: 600; }
+        .clear-btn:hover { background-color: #3a8eef; }
+        .reset-btn { width: 100%; padding: 8px; background-color: #dc3545; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: 600; margin-top: 10px; }
+        .reset-btn:hover { background-color: #c82333; }
+        .main-content { flex: 1; padding: 20px; overflow-y: auto; }
+        .kpi-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 20px; }
+        .kpi-card { background: white; padding: 20px; border: 1px solid #e0e0e0; border-radius: 6px; }
+        .kpi-title { font-size: 12px; color: #666; margin-bottom: 10px; text-transform: uppercase; }
+        .kpi-value { font-size: 28px; font-weight: 700; color: #202125; margin-bottom: 5px; }
+        .kpi-change { font-size: 13px; font-weight: 600; }
+        .kpi-change.positive { color: #28a745; }
+        .kpi-change.negative { color: #dc3545; }
+        .charts-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+        .chart-container { background: white; padding: 15px; border: 1px solid #e0e0e0; border-radius: 6px; }
+        .chart-container.full-width { grid-column: 1 / -1; }
+        .chart-title { font-size: 14px; font-weight: 600; margin-bottom: 10px; color: #202125; }
+        @media (max-width: 1200px) { .kpi-row { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) { .container { flex-direction: column; } .sidebar { width: 100%; height: auto; } .kpi-row { grid-template-columns: 1fr; } .charts-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Data Upload</h2>
+            <div class="upload-section"><label>Business Performance</label><input type="file" id="businessPerformance" accept=".json"></div>
+            <div class="upload-section"><label>Customer Revenue</label><input type="file" id="customerRevenue" accept=".json"></div>
+            <div class="upload-section"><label>Containers</label><input type="file" id="containers" accept=".json"></div>
+            <div class="upload-section"><label>Inventory Levels</label><input type="file" id="inventoryLevels" accept=".json"></div>
+            <div class="upload-section"><label>Pallets Spaces Consig</label><input type="file" id="palletsSpaces" accept=".json"></div>
+            <div class="filter-section">
+                <h3>Filters</h3>
+                <select id="customerFilter"><option value="">All Customers</option></select>
+                <select id="industryFilter"><option value="">All Industries</option></select>
+                <button class="clear-btn" onclick="clearFilters()">Clear Filters</button>
+                <button class="reset-btn" onclick="resetDashboard()">Reset Dashboard</button>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="kpi-row">
+                <div class="kpi-card"><div class="kpi-title">Total Revenue (Month)</div><div class="kpi-value" id="kpiRevenue">$0</div><div class="kpi-change" id="kpiRevenueChange">-</div></div>
+                <div class="kpi-card"><div class="kpi-title">Total Containers (Month)</div><div class="kpi-value" id="kpiContainers">0</div><div class="kpi-change" id="kpiContainersChange">-</div></div>
+                <div class="kpi-card"><div class="kpi-title">Total Inventory</div><div class="kpi-value" id="kpiInventory">0%</div><div class="kpi-change" id="kpiInventoryChange">Warehouse Occupancy</div></div>
+                <div class="kpi-card"><div class="kpi-title">Transport Consignments</div><div class="kpi-value" id="kpiConsignments">0</div><div class="kpi-change" id="kpiConsignmentsChange">-</div></div>
+            </div>
+            <div class="charts-grid">
+                <div class="chart-container full-width"><div class="chart-title">Revenue vs Budget & EBITDA%</div><div id="revenueBudgetChart"></div></div>
+                <div class="chart-container"><div class="chart-title">Warehouse Capacity</div><div style="display: flex; gap: 15px; align-items: flex-start;"><div id="warehouseCapacityChart" style="flex: 1;"></div><div id="warehouseTable" style="flex: 0 0 300px; font-size: 12px;"></div></div></div>
+                <div class="chart-container"><div class="chart-title">Transport: Pallets, Spaces & Consignments</div><div id="transportChart"></div></div>
+                <div class="chart-container"><div class="chart-title">Top 15 Customers by Revenue</div><div id="topCustomersChart"></div></div>
+                <div class="chart-container"><div class="chart-title">Container Volumes by Customer</div><div id="containerVolumesChart"></div></div>
+                <div class="chart-container full-width"><div class="chart-title">Revenue by Market / Industry</div><div style="display: flex; gap: 20px; align-items: flex-start;"><div id="revenueSegmentChart" style="flex: 1;"></div><div id="revenueSegmentTable" style="flex: 0 0 350px; font-size: 12px; max-height: 500px; overflow-y: auto;"></div></div></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var data = {
+            businessPerformance: [],
+            customerRevenue: [],
+            containers: [],
+            inventoryLevels: [],
+            palletsSpaces: []
+        };
+
+        var filters = {
+            customer: '',
+            industry: ''
+        };
+
+        function loadDataFromStorage() {
+            var savedData = localStorage.getItem('dashboardData');
+            if (savedData) {
+                data = JSON.parse(savedData);
+                updateDashboard();
+            }
+        }
+
+        function saveDataToStorage() {
+            localStorage.setItem('dashboardData', JSON.stringify(data));
+        }
+
+        function resetDashboard() {
+            if (confirm('Are you sure you want to reset all dashboard data?')) {
+                data = {
+                    businessPerformance: [],
+                    customerRevenue: [],
+                    containers: [],
+                    inventoryLevels: [],
+                    palletsSpaces: []
+                };
+                localStorage.removeItem('dashboardData');
+                document.getElementById('businessPerformance').value = '';
+                document.getElementById('customerRevenue').value = '';
+                document.getElementById('containers').value = '';
+                document.getElementById('inventoryLevels').value = '';
+                document.getElementById('palletsSpaces').value = '';
+                updateDashboard();
+                alert('Dashboard has been reset!');
+            }
+        }
+
+        function parseValue(val) {
+            if (typeof val === 'string') {
+                return parseFloat(val.replace(/[^0-9.-]/g, '')) || 0;
+            }
+            return val || 0;
+        }
+
+        function formatCurrency(val) {
+            return '$' + val.toLocaleString('en-US', {minimumFractionDigits: 0, maximumFractionDigits: 0});
+        }
+
+        function getLatestMonth(dataArray, monthField) {
+            if (!dataArray || dataArray.length === 0) return null;
+            var monthMap = {'Jan': 1, 'Feb': 2, 'Mar': 3, 'Apr': 4, 'May': 5, 'Jun': 6, 'Jul': 7, 'Aug': 8, 'Sep': 9, 'Oct': 10, 'Nov': 11, 'Dec': 12};
+            var parsedMonths = [];
+            for (var i = 0; i < dataArray.length; i++) {
+                var monthStr = dataArray[i][monthField];
+                if (monthStr) {
+                    var parts = monthStr.split('-');
+                    if (parts.length === 2) {
+                        var month = parts[0];
+                        var year = parseInt('20' + parts[1]);
+                        var monthNum = monthMap[month] || 0;
+                        parsedMonths.push({
+                            original: monthStr,
+                            year: year,
+                            month: monthNum,
+                            sortKey: year * 100 + monthNum
+                        });
+                    }
+                }
+            }
+            parsedMonths.sort(function(a, b) {
+                return b.sortKey - a.sortKey;
+            });
+            return parsedMonths.length > 0 ? parsedMonths[0].original : null;
+        }
+
+        function setupFileUpload(id, dataKey) {
+            document.getElementById(id).addEventListener('change', function(e) {
+                var file = e.target.files[0];
+                if (file) {
+                    var reader = new FileReader();
+                    reader.onload = function(event) {
+                        try {
+                            data[dataKey] = JSON.parse(event.target.result);
+                            saveDataToStorage();
+                            updateDashboard();
+                        } catch (error) {
+                            alert('Error parsing JSON file: ' + error.message);
+                        }
+                    };
+                    reader.readAsText(file);
+                }
+            });
+        }
+
+        setupFileUpload('businessPerformance', 'businessPerformance');
+        setupFileUpload('customerRevenue', 'customerRevenue');
+        setupFileUpload('containers', 'containers');
+        setupFileUpload('inventoryLevels', 'inventoryLevels');
+        setupFileUpload('palletsSpaces', 'palletsSpaces');
+
+        function updateFilters() {
+            var customers = [];
+            var industries = [];
+            
+            for (var i = 0; i < data.customerRevenue.length; i++) {
+                if (customers.indexOf(data.customerRevenue[i].customer) === -1) {
+                    customers.push(data.customerRevenue[i].customer);
+                }
+                if (industries.indexOf(data.customerRevenue[i]['Market/Industry']) === -1) {
+                    industries.push(data.customerRevenue[i]['Market/Industry']);
+                }
+            }
+            
+            customers.sort();
+            industries.sort();
+
+            var customerSelect = document.getElementById('customerFilter');
+            var industrySelect = document.getElementById('industryFilter');
+
+            customerSelect.innerHTML = '<option value="">All Customers</option>';
+            for (var i = 0; i < customers.length; i++) {
+                customerSelect.innerHTML += '<option value="' + customers[i] + '">' + customers[i] + '</option>';
+            }
+
+            industrySelect.innerHTML = '<option value="">All Industries</option>';
+            for (var i = 0; i < industries.length; i++) {
+                industrySelect.innerHTML += '<option value="' + industries[i] + '">' + industries[i] + '</option>';
+            }
+
+            customerSelect.value = filters.customer;
+            industrySelect.value = filters.industry;
+        }
+
+        document.getElementById('customerFilter').addEventListener('change', function() {
+            filters.customer = this.value;
+            updateDashboard();
+        });
+
+        document.getElementById('industryFilter').addEventListener('change', function() {
+            filters.industry = this.value;
+            updateDashboard();
+        });
+
+        function clearFilters() {
+            filters.customer = '';
+            filters.industry = '';
+            document.getElementById('customerFilter').value = '';
+            document.getElementById('industryFilter').value = '';
+            updateDashboard();
+        }
+
+        function getFilteredData() {
+            var filtered = data.customerRevenue;
+            if (filters.customer) {
+                filtered = filtered.filter(function(d) { return d.customer === filters.customer; });
+            }
+            if (filters.industry) {
+                filtered = filtered.filter(function(d) { return d['Market/Industry'] === filters.industry; });
+            }
+            return filtered;
+        }
+
+        function updateKPIs() {
+            var filtered = getFilteredData();
+            
+            if (data.businessPerformance.length > 0) {
+                // Filter to only get Actuals rows (not Forecast)
+                var actualsData = [];
+                for (var i = 0; i < data.businessPerformance.length; i++) {
+                    if (data.businessPerformance[i]['Business Performance'] === 'Actuals') {
+                        actualsData.push(data.businessPerformance[i]);
+                    }
+                }
+                
+                if (actualsData.length > 0) {
+                    var latestMonth = getLatestMonth(actualsData, 'Month');
+                    var months = [];
+                    for (var i = 0; i < actualsData.length; i++) {
+                        if (months.indexOf(actualsData[i].Month) === -1) {
+                            months.push(actualsData[i].Month);
+                        }
+                    }
+                    
+                    var currentRevenue = 0;
+                    var prevRevenue = 0;
+                    
+                    for (var i = 0; i < actualsData.length; i++) {
+                        if (actualsData[i].Month === latestMonth) {
+                            currentRevenue = parseValue(actualsData[i]['Actual Budget']);
+                        }
+                    }
+                    
+                    if (months.length > 1) {
+                        var prevMonth = months[months.length - 2];
+                        for (var i = 0; i < actualsData.length; i++) {
+                            if (actualsData[i].Month === prevMonth) {
+                                prevRevenue = parseValue(actualsData[i]['Actual Budget']);
+                            }
+                        }
+                    }
+                    
+                    document.getElementById('kpiRevenue').textContent = formatCurrency(currentRevenue);
+                    
+                    if (prevRevenue > 0) {
+                        var change = ((currentRevenue - prevRevenue) / prevRevenue * 100).toFixed(1);
+                        var changeEl = document.getElementById('kpiRevenueChange');
+                        changeEl.textContent = (change > 0 ? '+' : '') + change + '% vs prev month';
+                        changeEl.className = 'kpi-change ' + (change >= 0 ? 'positive' : 'negative');
+                    }
+                }
+            }
+
+            if (data.containers.length > 0) {
+                var latestMonth = getLatestMonth(data.containers, 'Month');
+                var containerData = data.containers;
+                
+                if (filters.customer) {
+                    containerData = containerData.filter(function(d) { return d.Customer === filters.customer; });
+                }
+
+                var currentContainers = 0;
+                for (var i = 0; i < containerData.length; i++) {
+                    if (containerData[i].Month === latestMonth) {
+                        currentContainers += parseValue(containerData[i].Containers);
+                    }
+                }
+                
+                document.getElementById('kpiContainers').textContent = currentContainers.toLocaleString();
+
+                var months = [];
+                for (var i = 0; i < containerData.length; i++) {
+                    if (months.indexOf(containerData[i].Month) === -1) {
+                        months.push(containerData[i].Month);
+                    }
+                }
+                
+                if (months.length > 1) {
+                    var prevMonth = months[months.length - 2];
+                    var prevContainers = 0;
+                    for (var i = 0; i < containerData.length; i++) {
+                        if (containerData[i].Month === prevMonth) {
+                            prevContainers += parseValue(containerData[i].Containers);
+                        }
+                    }
+                    if (prevContainers > 0) {
+                        var change = ((currentContainers - prevContainers) / prevContainers * 100).toFixed(1);
+                        var changeEl = document.getElementById('kpiContainersChange');
+                        changeEl.textContent = (change > 0 ? '+' : '') + change + '% vs prev month';
+                        changeEl.className = 'kpi-change ' + (change >= 0 ? 'positive' : 'negative');
+                    }
+                }
+            }
+
+            if (data.inventoryLevels.length > 0) {
+                var totalOccupied = 0;
+                var totalCapacity = 0;
+                for (var i = 0; i < data.inventoryLevels.length; i++) {
+                    totalOccupied += parseValue(data.inventoryLevels[i].Occupied);
+                    totalCapacity += parseValue(data.inventoryLevels[i]['Total capacity']);
+                }
+                var utilization = (totalOccupied / totalCapacity * 100).toFixed(1);
+                document.getElementById('kpiInventory').textContent = utilization + '%';
+            }
+
+            if (data.palletsSpaces.length > 0) {
+                var latestMonth = getLatestMonth(data.palletsSpaces, 'Month');
+                var currentConsignments = 0;
+                
+                for (var i = 0; i < data.palletsSpaces.length; i++) {
+                    if (data.palletsSpaces[i].Month === latestMonth) {
+                        currentConsignments = parseValue(data.palletsSpaces[i].Consignments);
+                        break;
+                    }
+                }
+                
+                document.getElementById('kpiConsignments').textContent = currentConsignments.toLocaleString();
+
+                var months = [];
+                for (var i = 0; i < data.palletsSpaces.length; i++) {
+                    if (months.indexOf(data.palletsSpaces[i].Month) === -1) {
+                        months.push(data.palletsSpaces[i].Month);
+                    }
+                }
+                
+                if (months.length > 1) {
+                    var prevMonth = months[months.length - 2];
+                    var prevConsignments = 0;
+                    for (var i = 0; i < data.palletsSpaces.length; i++) {
+                        if (data.palletsSpaces[i].Month === prevMonth) {
+                            prevConsignments = parseValue(data.palletsSpaces[i].Consignments);
+                            break;
+                        }
+                    }
+                    if (prevConsignments > 0) {
+                        var change = ((currentConsignments - prevConsignments) / prevConsignments * 100).toFixed(1);
+                        var changeEl = document.getElementById('kpiConsignmentsChange');
+                        changeEl.textContent = (change > 0 ? '+' : '') + change + '% vs prev month';
+                        changeEl.className = 'kpi-change ' + (change >= 0 ? 'positive' : 'negative');
+                    }
+                }
+            }
+        }
+
+        function updateRevenueBudgetChart() {
+            if (data.businessPerformance.length === 0) return;
+
+            var months = [];
+            var revenueBudget = [];
+            var actualBudget = [];
+            var ebitdaFcst = [];
+            var ebitdaActualMonths = [];
+            var ebitdaActualValues = [];
+
+            for (var i = 0; i < data.businessPerformance.length; i++) {
+                var d = data.businessPerformance[i];
+                months.push(d.Month);
+                revenueBudget.push(parseValue(d['Revenue Budget']));
+                actualBudget.push(parseValue(d['Actual Budget']));
+                ebitdaFcst.push(parseFloat(d['EBITDA FCST']) || 0);
+                
+                var val = d['EBITDA ACTUAL'];
+                if (val && val !== '' && val !== null) {
+                    ebitdaActualMonths.push(d.Month);
+                    ebitdaActualValues.push(parseFloat(val));
+                }
+            }
+
+            var traces = [
+                {
+                    x: months,
+                    y: revenueBudget,
+                    name: 'Revenue Budget',
+                    type: 'bar',
+                    marker: { color: '#3A4649' }
+                },
+                {
+                    x: months,
+                    y: actualBudget,
+                    name: 'Revenue Actual',
+                    type: 'bar',
+                    marker: { color: '#4EB7A9' }
+                },
+                {
+                    x: months,
+                    y: ebitdaFcst,
+                    name: 'EBITDA Forecast %',
+                    type: 'scatter',
+                    mode: 'lines+markers',
+                    yaxis: 'y2',
+                    line: { color: '#EC4F97', width: 2 },
+                    marker: { size: 6 }
+                },
+                {
+                    x: ebitdaActualMonths,
+                    y: ebitdaActualValues,
+                    name: 'EBITDA Actual %',
+                    type: 'scatter',
+                    mode: 'lines+markers',
+                    yaxis: 'y2',
+                    line: { color: '#EAC731', width: 2 },
+                    marker: { size: 6 }
+                }
+            ];
+
+            var layout = {
+                barmode: 'group',
+                height: 350,
+                margin: { l: 60, r: 60, t: 20, b: 60 },
+                yaxis: { title: 'Revenue ($)', showgrid: true },
+                yaxis2: { title: 'EBITDA %', overlaying: 'y', side: 'right', showgrid: false },
+                legend: { orientation: 'h', y: -0.2 }
+            };
+
+            Plotly.newPlot('revenueBudgetChart', traces, layout, {responsive: true});
+        }
+
+        function updateWarehouseCapacityChart() {
+            if (data.inventoryLevels.length === 0) return;
+
+            var warehouses = [];
+            var occupiedPercent = [];
+
+            for (var i = 0; i < data.inventoryLevels.length; i++) {
+                warehouses.push(data.inventoryLevels[i].Warehouse);
+                occupiedPercent.push(parseFloat(data.inventoryLevels[i]['Occupied %']) || 0);
+            }
+
+            var colors = [];
+            var textLabels = [];
+            for (var i = 0; i < occupiedPercent.length; i++) {
+                colors.push(occupiedPercent[i] > 100 ? '#FE6876' : '#4EB7A9');
+                textLabels.push(occupiedPercent[i].toFixed(1) + '%');
+            }
+
+            var trace = {
+                x: warehouses,
+                y: occupiedPercent,
+                type: 'bar',
+                marker: {
+                    color: colors,
+                    line: { width: 0 }
+                },
+                text: textLabels,
+                textposition: 'outside',
+                hovertemplate: '<b>%{x}</b><br>Occupied: %{y:.1f}%<extra></extra>'
+            };
+
+            var layout = {
+                height: 300,
+                margin: { l: 60, r: 20, t: 30, b: 80 },
+                yaxis: { 
+                    title: 'Occupied %', 
+                    showgrid: true,
+                    gridcolor: '#e0e0e0'
+                },
+                xaxis: { 
+                    showgrid: false,
+                    tickangle: -45
+                },
+                showlegend: false,
+                plot_bgcolor: 'white',
+                paper_bgcolor: 'white'
+            };
+
+            Plotly.newPlot('warehouseCapacityChart', [trace], layout, {responsive: true});
+
+            var tableHTML = '<table style="width:100%;border-collapse:collapse;background:white;"><thead><tr style="background-color:#f8f9fa;border-bottom:2px solid #dee2e6;"><th style="padding:8px;text-align:left;font-weight:600;">Warehouse</th><th style="padding:8px;text-align:right;font-weight:600;">Capacity</th><th style="padding:8px;text-align:right;font-weight:600;">Occupied</th><th style="padding:8px;text-align:right;font-weight:600;">Occupied %</th></tr></thead><tbody>';
+
+            for (var i = 0; i < data.inventoryLevels.length; i++) {
+                var d = data.inventoryLevels[i];
+                var bgColor = i % 2 === 0 ? '#ffffff' : '#f8f9fa';
+                var occupiedPct = parseFloat(d['Occupied %']) || 0;
+                var percentColor = occupiedPct > 100 ? '#FE6876' : '#333';
+                var fontWeight = occupiedPct > 100 ? '600' : 'normal';
+                
+                tableHTML += '<tr style="background-color:' + bgColor + ';border-bottom:1px solid #dee2e6;"><td style="padding:8px;">' + d.Warehouse + '</td><td style="padding:8px;text-align:right;">' + parseValue(d['Total capacity']).toLocaleString() + '</td><td style="padding:8px;text-align:right;">' + parseValue(d.Occupied).toLocaleString() + '</td><td style="padding:8px;text-align:right;color:' + percentColor + ';font-weight:' + fontWeight + ';">' + d['Occupied %'] + '</td></tr>';
+            }
+
+            tableHTML += '</tbody></table>';
+            document.getElementById('warehouseTable').innerHTML = tableHTML;
+        }
+
+        function updateTransportChart() {
+            if (data.palletsSpaces.length === 0) return;
+
+            var months = [];
+            var pallets = [];
+            var spaces = [];
+            var consignments = [];
+
+            for (var i = 0; i < data.palletsSpaces.length; i++) {
+                var d = data.palletsSpaces[i];
+                months.push(d.Month);
+                var p = parseValue(d.Pallets);
+                var s = parseValue(d.Spaces);
+                var c = parseValue(d.Consignments);
+                pallets.push(p);
+                spaces.push(s);
+                consignments.push(c);
+            }
+
+            var textPallets = [];
+            var textSpaces = [];
+            var textConsignments = [];
+            for (var i = 0; i < pallets.length; i++) {
+                textPallets.push(pallets[i].toLocaleString());
+                textSpaces.push(spaces[i].toLocaleString());
+                textConsignments.push(consignments[i].toLocaleString());
+            }
+
+            var traces = [
+                {
+                    y: months,
+                    x: pallets,
+                    name: 'Pallets',
+                    type: 'bar',
+                    orientation: 'h',
+                    marker: { color: '#4EB7A9' },
+                    text: textPallets,
+                    textposition: 'inside',
+                    insidetextanchor: 'middle',
+                    textfont: { color: 'white', size: 11, weight: 'bold' }
+                },
+                {
+                    y: months,
+                    x: spaces,
+                    name: 'Spaces',
+                    type: 'bar',
+                    orientation: 'h',
+                    marker: { color: '#3A4649' },
+                    text: textSpaces,
+                    textposition: 'inside',
+                    insidetextanchor: 'middle',
+                    textfont: { color: 'white', size: 11, weight: 'bold' }
+                },
+                {
+                    y: months,
+                    x: consignments,
+                    name: 'Consignments',
+                    type: 'bar',
+                    orientation: 'h',
+                    marker: { color: '#EC4F97' },
+                    text: textConsignments,
+                    textposition: 'inside',
+                    insidetextanchor: 'middle',
+                    textfont: { color: 'white', size: 11, weight: 'bold' }
+                }
+            ];
+
+            var layout = {
+                barmode: 'stack',
+                height: 350,
+                margin: { l: 60, r: 20, t: 20, b: 60 },
+                xaxis: { showgrid: false, showticklabels: false, zeroline: false },
+                yaxis: { autorange: 'reversed', showgrid: false },
+                legend: { orientation: 'h', y: -0.15 },
+                showlegend: true
+            };
+
+            Plotly.newPlot('transportChart', traces, layout, {responsive: true});
+        }
+
+        function updateTopCustomersChart() {
+            var filtered = getFilteredData();
+            if (filtered.length === 0) return;
+
+            var latestMonth = getLatestMonth(filtered, 'Month');
+            var currentMonthData = [];
+            
+            for (var i = 0; i < filtered.length; i++) {
+                if (filtered[i].Month === latestMonth) {
+                    currentMonthData.push(filtered[i]);
+                }
+            }
+
+            var customerRevenues = {};
+            for (var i = 0; i < currentMonthData.length; i++) {
+                var customer = currentMonthData[i].customer;
+                var revenue = parseValue(currentMonthData[i].REVENUE);
+                customerRevenues[customer] = (customerRevenues[customer] || 0) + revenue;
+            }
+
+            var sorted = Object.entries(customerRevenues).sort(function(a, b) {
+                return b[1] - a[1];
+            }).slice(0, 15);
+
+            var customers = sorted.map(function(d) { return d[0]; });
+            var revenues = sorted.map(function(d) { return d[1]; });
+
+            var trace = {
+                x: revenues,
+                y: customers,
+                type: 'bar',
+                orientation: 'h',
+                marker: { color: '#4EB7A9' }
+            };
+
+            var layout = {
+                height: 350,
+                margin: { l: 200, r: 20, t: 20, b: 60 },
+                yaxis: { autorange: 'reversed', showgrid: false },
+                xaxis: { showgrid: true, title: 'Revenue ($)' }
+            };
+
+            Plotly.newPlot('topCustomersChart', [trace], layout, {responsive: true});
+        }
+
+        function updateContainerVolumesChart() {
+            if (data.containers.length === 0) return;
+
+            var containerData = data.containers;
+            if (filters.customer) {
+                containerData = containerData.filter(function(d) { return d.Customer === filters.customer; });
+            }
+
+            var latestMonth = getLatestMonth(containerData, 'Month');
+            var currentData = [];
+            
+            for (var i = 0; i < containerData.length; i++) {
+                if (containerData[i].Month === latestMonth) {
+                    currentData.push(containerData[i]);
+                }
+            }
+
+            var customerContainers = {};
+            for (var i = 0; i < currentData.length; i++) {
+                var customer = currentData[i].Customer;
+                var containers = parseValue(currentData[i].Containers);
+                customerContainers[customer] = (customerContainers[customer] || 0) + containers;
+            }
+
+            var sorted = Object.entries(customerContainers).sort(function(a, b) {
+                return b[1] - a[1];
+            }).slice(0, 15);
+
+            var customers = sorted.map(function(d) { return d[0]; });
+            var containers = sorted.map(function(d) { return d[1]; });
+
+            var trace = {
+                y: customers,
+                x: containers,
+                type: 'bar',
+                orientation: 'h',
+                marker: { color: '#3A4649' }
+            };
+
+            var layout = {
+                height: 350,
+                margin: { l: 200, r: 20, t: 20, b: 60 },
+                yaxis: { autorange: 'reversed', showgrid: false },
+                xaxis: { showgrid: true, title: 'Containers' }
+            };
+
+            Plotly.newPlot('containerVolumesChart', [trace], layout, {responsive: true});
+        }
+
+        function updateRevenueSegmentChart() {
+            var filtered = getFilteredData();
+            if (filtered.length === 0) return;
+
+            var latestMonth = getLatestMonth(filtered, 'Month');
+            var currentMonthData = [];
+            
+            for (var i = 0; i < filtered.length; i++) {
+                if (filtered[i].Month === latestMonth) {
+                    currentMonthData.push(filtered[i]);
+                }
+            }
+
+            var marketRevenues = {};
+            for (var i = 0; i < currentMonthData.length; i++) {
+                var key = currentMonthData[i]['Market/Industry'];
+                var revenue = parseValue(currentMonthData[i].REVENUE);
+                marketRevenues[key] = (marketRevenues[key] || 0) + revenue;
+            }
+
+            var sorted = Object.entries(marketRevenues).sort(function(a, b) {
+                return b[1] - a[1];
+            });
+
+            var labels = sorted.map(function(d) { return d[0]; });
+            var values = sorted.map(function(d) { return d[1]; });
+            var total = values.reduce(function(sum, val) { return sum + val; }, 0);
+            var percentages = values.map(function(val) { return (val / total * 100); });
+            var textArray = labels.map(function(label, i) {
+                return percentages[i] >= 10 ? label + '<br>' + percentages[i].toFixed(1) + '%' : '';
+            });
+
+            var trace = {
+                labels: labels,
+                values: values,
+                type: 'pie',
+                hole: 0.4,
+                text: textArray,
+                textinfo: 'text',
+                textposition: 'inside',
+                insidetextorientation: 'radial',
+                automargin: true,
+                hovertemplate: '<b>%{label}</b><br>Revenue: $%{value:,.0f}<br>%{percent}<extra></extra>',
+                marker: {
+                    colors: ['#4EB7A9', '#EAC731', '#EC4F97', '#E59EDD', '#6c757d', '#95a5a6', '#7f8c8d', '#bdc3c7', '#a8b2b5', '#c0c0c0'],
+                    line: { color: 'white', width: 2 }
+                }
+            };
+
+            var layout = {
+                height: 500,
+                margin: { l: 10, r: 10, t: 10, b: 10 },
+                showlegend: false
+            };
+
+            Plotly.newPlot('revenueSegmentChart', [trace], layout, {responsive: true});
+
+            var colors = ['#4EB7A9', '#EAC731', '#EC4F97', '#E59EDD', '#6c757d', '#95a5a6', '#7f8c8d', '#bdc3c7', '#a8b2b5', '#c0c0c0'];
+            var tableHTML = '<table style="width:100%;border-collapse:collapse;background:white;"><thead><tr style="background-color:#f8f9fa;border-bottom:2px solid #dee2e6;"><th style="padding:8px;text-align:left;font-weight:600;">Market / Industry</th><th style="padding:8px;text-align:right;font-weight:600;">Revenue</th><th style="padding:8px;text-align:right;font-weight:600;">%</th></tr></thead><tbody>';
+
+            for (var i = 0; i < sorted.length; i++) {
+                var label = sorted[i][0];
+                var value = sorted[i][1];
+                var bgColor = i % 2 === 0 ? '#ffffff' : '#f8f9fa';
+                var percentage = (value / total * 100).toFixed(1);
+                var dotColor = colors[i % colors.length];
+                
+                tableHTML += '<tr style="background-color:' + bgColor + ';border-bottom:1px solid #dee2e6;"><td style="padding:8px;"><span style="display:inline-block;width:10px;height:10px;background-color:' + dotColor + ';border-radius:50%;margin-right:6px;"></span>' + label + '</td><td style="padding:8px;text-align:right;">' + formatCurrency(value) + '</td><td style="padding:8px;text-align:right;">' + percentage + '%</td></tr>';
+            }
+
+            tableHTML += '</tbody></table>';
+            document.getElementById('revenueSegmentTable').innerHTML = tableHTML;
+        }
+
+        function updateDashboard() {
+            updateFilters();
+            updateKPIs();
+            updateRevenueBudgetChart();
+            updateWarehouseCapacityChart();
+            updateTransportChart();
+            updateTopCustomersChart();
+            updateContainerVolumesChart();
+            updateRevenueSegmentChart();
+        }
+
+        updateDashboard();
+        loadDataFromStorage();
+    </script>
+</body>
+</html>
